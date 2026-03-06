@@ -180,22 +180,22 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎮 Training Safety Quiz</h1>
-            <p>Test your knowledge and win awards!</p>
+            <h1>🎮 PIT Safety Quiz</h1>
+            <p>Set 1: PIT Basics & Operations</p>
         </div>
         
         <div class="content">
             <!-- Quiz Intro -->
             <div id="quizIntro" class="quiz-intro">
-                <h2>Welcome to the Safety Quiz!</h2>
+                <h2>PIT Safety Quiz - Set 1</h2>
                 <p>
-                    Test your knowledge about warehouse safety and equipment operation.
+                    Test your knowledge about Powered Industrial Truck (PIT) safety.
                     <br><br>
                     <strong>Rules:</strong>
                     <br>• 10 multiple choice questions
                     <br>• Score 90%+ for Gold Badge 🥇
                     <br>• Score 80-89% for Silver Badge 🥈
-                    <br>• Score 70-79% for Bronze Badge 🥉
+                    <br>• Below 80% = Not Passed, try again!
                     <br><br>
                     Good luck!
                 </p>
@@ -232,102 +232,102 @@
     <script>
         const questions = [
             {
-                question: "What should you do before operating a forklift?",
+                question: "What does PIT stand for?",
                 options: [
-                    "Start immediately if you're in a hurry",
-                    "Perform a pre-operation inspection",
-                    "Skip the checklist if you used it yesterday",
-                    "Only check if something looks wrong"
+                    "Powered Industrial Truck",
+                    "Personal Industrial Tool",
+                    "Portable Industrial Transport",
+                    "Powered Internal Transport"
+                ],
+                correct: 0
+            },
+            {
+                question: "Before operating a PIT, what must an operator do?",
+                options: [
+                    "Start the engine immediately",
+                    "Perform a pre-shift inspection",
+                    "Load the forks to maximum capacity",
+                    "Check the weather forecast"
                 ],
                 correct: 1
             },
             {
-                question: "What is the maximum speed limit for forklifts in the warehouse?",
+                question: "What should you do if you find a defect during a PIT pre-shift inspection?",
                 options: [
-                    "As fast as possible to be efficient",
-                    "5 mph (8 km/h)",
-                    "15 mph (24 km/h)",
-                    "No speed limit"
-                ],
-                correct: 1
-            },
-            {
-                question: "When should you wear a safety vest?",
-                options: [
-                    "Only when a manager is watching",
-                    "Only during night shifts",
-                    "At all times in the warehouse",
-                    "Only when operating equipment"
+                    "Continue operating if the defect seems minor",
+                    "Report it to a colleague and keep using it",
+                    "Remove the PIT from service and report it immediately",
+                    "Fix it yourself before starting your shift"
                 ],
                 correct: 2
             },
             {
-                question: "What should you do if you notice a spill on the floor?",
+                question: "When traveling with a load on a PIT, the forks should be:",
                 options: [
-                    "Walk around it carefully",
-                    "Report it immediately and mark the area",
-                    "Ignore it if it's small",
-                    "Clean it only if you have time"
+                    "Raised as high as possible for visibility",
+                    "Lowered to a safe travel height (typically 15\u201320 cm from the ground)",
+                    "Tilted forward to balance the load",
+                    "Positioned at shoulder height"
                 ],
                 correct: 1
             },
             {
-                question: "How often should PIT Safety training be renewed?",
+                question: "What is the most common cause of PIT-related fatalities in the workplace?",
                 options: [
-                    "Never, once is enough",
+                    "Mechanical failure",
+                    "Speeding",
+                    "Tip-overs / overturns",
+                    "Battery malfunction"
+                ],
+                correct: 2
+            },
+            {
+                question: "If a PIT begins to tip over, what should the operator do?",
+                options: [
+                    "Jump off the truck immediately",
+                    "Stay in the seat, hold on tightly, and lean away from the direction of fall",
+                    "Try to stop the tip by putting their foot on the ground",
+                    "Stand up and jump clear"
+                ],
+                correct: 1
+            },
+            {
+                question: "Who is authorized to operate a PIT?",
+                options: [
+                    "Any employee on the warehouse floor",
+                    "Only employees who have completed certified PIT safety training",
+                    "Any employee with a driving licence",
+                    "Supervisors and managers only"
+                ],
+                correct: 1
+            },
+            {
+                question: "What does the load capacity plate on a PIT indicate?",
+                options: [
+                    "The maximum speed of the truck",
+                    "The weight of the truck itself",
+                    "The maximum load the truck can safely carry",
+                    "The battery charge level"
+                ],
+                correct: 2
+            },
+            {
+                question: "When should a PIT operator sound the horn?",
+                options: [
+                    "Only in emergencies",
+                    "At intersections, blind spots, and when pedestrians are nearby",
+                    "Every 5 minutes during operation",
+                    "Only when reversing"
+                ],
+                correct: 1
+            },
+            {
+                question: "How often must PIT operator certifications be renewed?",
+                options: [
+                    "Every 6 months",
                     "Every 5 years",
-                    "Annually or as required",
-                    "Only when you change equipment"
-                ],
-                correct: 2
-            },
-            {
-                question: "What is the proper lifting technique?",
-                options: [
-                    "Bend at the waist and lift with your back",
-                    "Bend your knees and lift with your legs",
-                    "Twist while lifting to save time",
-                    "Lift as fast as possible"
-                ],
-                correct: 1
-            },
-            {
-                question: "When is it safe to walk under a raised load?",
-                options: [
-                    "When you're in a hurry",
-                    "If the load looks secure",
-                    "Never",
-                    "Only if the operator gives permission"
-                ],
-                correct: 2
-            },
-            {
-                question: "What should you do if your equipment malfunctions?",
-                options: [
-                    "Try to fix it yourself",
-                    "Continue using it carefully",
-                    "Stop immediately and report it",
-                    "Finish your task first"
-                ],
-                correct: 2
-            },
-            {
-                question: "What is the purpose of the buddy system?",
-                options: [
-                    "To make work more fun",
-                    "To ensure safety through mutual observation",
-                    "To slow down operations",
-                    "It's not necessary"
-                ],
-                correct: 1
-            },
-            {
-                question: "When should you report a near-miss incident?",
-                options: [
-                    "Only if someone gets hurt",
-                    "Never, it's embarrassing",
-                    "Immediately, to prevent future accidents",
-                    "Only if a manager saw it"
+                    "Every 3 years (or sooner if unsafe operation is observed)",
+                    "Only once \u2014 no renewal required"
                 ],
                 correct: 2
             }
@@ -418,19 +418,32 @@
             if (percentage >= 90) {
                 award = '🥇';
                 awardText = 'GOLD BADGE!';
-                message = 'Outstanding! You are a safety champion!';
+                message = 'Outstanding! You are a PIT safety champion!';
             } else if (percentage >= 80) {
                 award = '🥈';
                 awardText = 'SILVER BADGE!';
-                message = 'Great job! You have excellent safety knowledge!';
-            } else if (percentage >= 70) {
-                award = '🥉';
-                awardText = 'BRONZE BADGE!';
-                message = 'Good work! Keep learning and improving!';
+                message = 'Great job! You passed the PIT safety quiz!';
             } else {
                 award = '📚';
-                awardText = 'KEEP LEARNING!';
-                message = 'Review the training materials and try again!';
+                awardText = 'NOT PASSED';
+                message = 'You need 80% or higher to pass. Review the safety tips and try again!';
+            }
+            
+            // Save award to localStorage if passed (80%+)
+            if (percentage >= 80) {
+                const quizData = JSON.parse(localStorage.getItem('pitQuizAwards') || '{}');
+                const setKey = 'set1';
+                // Only save if better than previous score
+                if (!quizData[setKey] || percentage > quizData[setKey].score) {
+                    quizData[setKey] = {
+                        score: percentage,
+                        award: award,
+                        awardText: awardText,
+                        date: new Date().toISOString().split('T')[0],
+                        setName: 'PIT Basics & Operations'
+                    };
+                    localStorage.setItem('pitQuizAwards', JSON.stringify(quizData));
+                }
             }
             
             document.getElementById('progressContainer').style.display = 'none';
