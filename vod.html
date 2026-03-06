@@ -374,27 +374,24 @@
             }
             
             // Collect form data
-            const formData = {
-                category: category,
-                subject: subject,
-                details: details,
-                name: document.getElementById('name').value.trim() || 'Anonymous',
-                login: document.getElementById('login').value.trim() || 'Not provided',
-                email: document.getElementById('email').value.trim() || 'Not provided',
-                timestamp: new Date().toISOString(),
-                submittedFrom: 'Training Badge System'
-            };
+            const senderName = document.getElementById('name').value.trim() || 'Anonymous';
+            const senderLogin = document.getElementById('login').value.trim() || 'Not provided';
+            const senderEmail = document.getElementById('email').value.trim() || 'Not provided';
             
-            // In production, you would send this to a backend API
-            // For now, we'll just show success message
-            console.log('VOD Feedback Submitted:', formData);
+            // Build mailto link
+            const emailSubject = encodeURIComponent('[VOD Feedback] [' + category.toUpperCase() + '] ' + subject);
+            const emailBody = encodeURIComponent(
+                'Category: ' + category + '\n' +
+                'Subject: ' + subject + '\n\n' +
+                'Details:\n' + details + '\n\n' +
+                '---\n' +
+                'From: ' + senderName + '\n' +
+                'Login: ' + senderLogin + '\n' +
+                'Email: ' + senderEmail + '\n' +
+                'Submitted: ' + new Date().toLocaleString()
+            );
             
-            // TODO: Send to backend API
-            // fetch('/api/vod-feedback', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(formData)
-            // });
+            window.location.href = 'mailto:firdaub@amazon.com?subject=' + emailSubject + '&body=' + emailBody;
             
             // Show success message
             document.getElementById('vodForm').style.display = 'none';
