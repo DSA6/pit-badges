@@ -794,7 +794,7 @@
         function openNews() {
             // URL untuk halaman news/info dari admin
             // Bisa diganti dengan URL internal company atau Quip document
-            const newsUrl = '../news.html';
+            const newsUrl = '../news.html?v=' + Date.now();
             window.open(newsUrl, '_blank');
         }
         
@@ -802,14 +802,14 @@
         function openQuiz() {
             // URL untuk halaman quiz game
             // Bisa diganti dengan URL quiz system
-            const quizUrl = '../quiz.html';
+            const quizUrl = '../quiz.html?v=' + Date.now();
             window.open(quizUrl, '_blank');
         }
         
         // VOD Feedback function
         function openVOD() {
             // URL untuk halaman VOD feedback
-            const vodUrl = '../vod.html';
+            const vodUrl = '../vod.html?v=' + Date.now();
             window.open(vodUrl, '_blank');
         }
 
