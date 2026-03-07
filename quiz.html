@@ -142,15 +142,204 @@
                 { q: 'What is the 3-point rule for mounting/dismounting a PIT?', options: ['3 people must be present', 'Always maintain 3 points of contact (2 hands + 1 foot or 2 feet + 1 hand)', 'Wait 3 seconds before moving', 'Check 3 mirrors'], answer: 1 }
             ]
         },
-        { id: 'set2', name: 'Set 2: PIT Hazard Awareness', description: 'Coming soon - Identify and avoid common PIT hazards.', questions: [] },
-        { id: 'set3', name: 'Set 3: Load Handling & Stability', description: 'Coming soon - Proper load handling techniques.', questions: [] },
-        { id: 'set4', name: 'Set 4: Pedestrian Safety', description: 'Coming soon - Keeping pedestrians safe around PIT.', questions: [] },
-        { id: 'set5', name: 'Set 5: Emergency Procedures', description: 'Coming soon - What to do in emergency situations.', questions: [] },
-        { id: 'set6', name: 'Set 6: Workplace Environment', description: 'Coming soon - Safe operating environment.', questions: [] },
-        { id: 'set7', name: 'Set 7: Maintenance & Inspection', description: 'Coming soon - Equipment care and inspection.', questions: [] },
-        { id: 'set8', name: 'Set 8: Regulations & Compliance', description: 'Coming soon - Rules and regulations.', questions: [] },
-        { id: 'set9', name: 'Set 9: Advanced Operations', description: 'Coming soon - Advanced PIT techniques.', questions: [] },
-        { id: 'set10', name: 'Set 10: Final Assessment', description: 'Coming soon - Comprehensive final quiz.', questions: [] }
+        {
+            id: 'set2',
+            name: 'Set 2: PIT Safety Fundamentals',
+            description: 'Test your knowledge on PIT safety fundamentals, inspections, and safe operating procedures.',
+            questions: [
+                { q: 'What does PIT stand for?', options: ['Powered Industrial Truck', 'Personal Industrial Tool', 'Portable Industrial Transport', 'Powered Internal Transport'], answer: 0 },
+                { q: 'Before operating a PIT, what must an operator do?', options: ['Start the engine immediately', 'Complete a pre-shift inspection', 'Ask a colleague for permission', 'Check the weather'], answer: 1 },
+                { q: 'What is the maximum speed allowed for a walkie in a pedestrian zone?', options: ['10 km/h', '5 km/h', 'Walking pace (approx. 6 km/h)', 'No limit'], answer: 2 },
+                { q: 'When should you sound the horn on a PIT?', options: ['Only when reversing', 'At intersections, blind spots, and when pedestrians are nearby', 'Only in emergencies', 'Never - it disturbs others'], answer: 1 },
+                { q: 'What does a yellow floor marking typically indicate in a warehouse?', options: ['Fire exit', 'Pedestrian walkway', 'PIT-only zone', 'Hazardous material area'], answer: 1 },
+                { q: 'What should you do if you notice a fault during a pre-shift inspection?', options: ['Continue operating and report at end of shift', 'Tag the equipment out of service and report immediately', 'Fix it yourself', 'Ignore minor faults'], answer: 1 },
+                { q: 'What is the correct way to park a PIT at the end of a shift?', options: ['Leave forks raised for visibility', 'Lower forks to the ground, apply parking brake, turn off', 'Leave it running for the next operator', 'Park anywhere convenient'], answer: 1 },
+                { q: 'Who is responsible for the safe operation of a PIT?', options: ['The site manager only', 'The maintenance team', 'The trained and authorised operator', 'Anyone nearby'], answer: 2 },
+                { q: 'What should you do when approaching a corner in a PIT?', options: ['Speed up to clear the area quickly', 'Slow down and sound the horn', 'Flash your lights', 'Stop completely every time'], answer: 1 },
+                { q: 'What is the purpose of a PIT licence/badge?', options: ['To show seniority', 'To prove the operator is trained and authorised to operate that equipment', 'To access the canteen', 'It is optional'], answer: 1 },
+                { q: 'How should loads be carried on a walkie pallet truck?', options: ['As high as possible for visibility', 'Tilted forward', 'Low and stable, close to the ground', 'Hanging off the side'], answer: 2 },
+                { q: 'What action should you take if a pedestrian enters your path?', options: ['Sound the horn and continue', 'Stop immediately and wait for the pedestrian to clear', 'Swerve around them', 'Flash your lights'], answer: 1 },
+                { q: 'What does "LOTO" stand for in a warehouse safety context?', options: ['Lift, Operate, Transfer, Offload', 'Lockout/Tagout', 'Load, Organise, Track, Output', 'Licence, Operate, Train, Observe'], answer: 1 },
+                { q: 'When is it acceptable to carry passengers on a PIT?', options: ['When the journey is short', 'When a manager approves', 'Never, unless the equipment is specifically designed for it', 'Always, if there is space'], answer: 2 },
+                { q: 'What should you do if your PIT runs out of battery mid-operation?', options: ['Push it to the nearest charging point', 'Leave it where it is', 'Follow the site procedure: safely park, apply brake, report, and arrange charging/swap', 'Continue operating until it stops'], answer: 2 }
+            ]
+        },
+        {
+            id: 'set3',
+            name: 'Set 3: PIT Walkie Operations',
+            description: 'Test your knowledge on walkie pallet truck operations, safety checks, and correct procedures.',
+            questions: [
+                { q: 'A walkie pallet truck is classified as which type of PIT?', options: ['Counterbalance', 'Reach truck', 'Pedestrian-operated powered industrial truck', 'Tow tractor'], answer: 2 },
+                { q: 'What is the correct operator position when using a walkie pallet truck?', options: ['Standing on the forks', 'Standing to the side and slightly behind the machine, out of the path of travel', 'Sitting on top of the load', 'Walking in front of the machine'], answer: 1 },
+                { q: 'When travelling with a loaded walkie, which direction should you travel on a slope?', options: ['Load leading uphill, forks trailing downhill', 'Forks leading uphill, load trailing downhill', 'Always travel sideways', 'Direction does not matter'], answer: 0 },
+                { q: 'What is the maximum load capacity of a standard walkie pallet truck?', options: ['500 kg', '1000 kg', 'Varies - always check the data plate on the equipment', '5000 kg'], answer: 2 },
+                { q: 'What should you check on the forks before starting a shift?', options: ['That they are painted correctly', 'For cracks, bends, or damage', 'That they are warm', 'Nothing - forks never need checking'], answer: 1 },
+                { q: 'What does a red light on the battery indicator mean?', options: ['Battery is fully charged', 'Battery is low and needs charging soon', 'Battery is overheating', 'Battery is disconnected'], answer: 1 },
+                { q: 'When entering a lift/elevator with a walkie, what should you do?', options: ['Enter forwards and exit forwards', 'Enter backwards so you can exit forwards, or follow site-specific procedure', 'Never use a lift with a PIT', 'Speed up to fit in quickly'], answer: 1 },
+                { q: 'What is the danger of overloading a walkie pallet truck?', options: ['It uses more battery', 'It makes noise', 'It can cause tip-over, brake failure, or structural damage', 'It slows down slightly'], answer: 2 },
+                { q: 'How should you pick up a pallet with a walkie?', options: ['Insert forks fully into the pallet, lift slightly, check stability, then travel', 'Insert forks halfway and travel immediately', 'Lift as high as possible first', 'Push the pallet from the side'], answer: 0 },
+                { q: 'What should you do if the emergency stop button is activated?', options: ['Reset it immediately without checking', 'Investigate the cause before resetting, and report the incident', 'Ignore it if the machine still works', 'Call maintenance only if it happens twice'], answer: 1 },
+                { q: 'What is the safe following distance between two PITs in a warehouse aisle?', options: ['No distance needed', 'At least one truck length', 'At least three truck lengths', '50 cm'], answer: 2 },
+                { q: 'What should you do before reversing a walkie?', options: ['Sound the horn and check the area is clear', 'Reverse immediately', 'Ask someone to watch', 'Turn off the horn'], answer: 0 },
+                { q: 'Which PPE is typically required when operating a walkie?', options: ['Hard hat and goggles', 'Safety shoes and high-visibility vest', 'Gloves and ear defenders', 'No PPE required'], answer: 1 },
+                { q: 'What does the data plate on a PIT tell you?', options: ['The operator\'s name', 'The equipment\'s maximum load capacity and specifications', 'The last service date only', 'The colour code for the aisle'], answer: 1 },
+                { q: 'If you witness a near-miss involving a PIT, what should you do?', options: ['Ignore it if no one was hurt', 'Tell a colleague informally', 'Report it through the site\'s near-miss reporting system', 'Only report if it happens again'], answer: 2 }
+            ]
+        },
+        {
+            id: 'set4',
+            name: 'Set 4: PIT Safety Medium (Counterbalance / Reach Truck)',
+            description: 'Test your knowledge on counterbalance forklifts, reach trucks, stability, and load handling.',
+            questions: [
+                { q: 'What is a counterbalance forklift?', options: ['A truck with forks at the rear', 'A sit-down or stand-up truck with forks at the front, counterbalanced by the rear weight', 'A truck used only outdoors', 'A pedestrian-operated truck'], answer: 1 },
+                { q: 'What is the stability triangle on a forklift?', options: ['The shape of the forks', 'The three-point support system formed by the two front wheels and the rear axle pivot', 'The triangular warning sign on the mast', 'The shape of the load'], answer: 1 },
+                { q: 'What happens to the stability of a forklift when the load is raised?', options: ['Stability increases', 'Stability is unaffected', 'Stability decreases - the centre of gravity rises', 'The forklift becomes lighter'], answer: 2 },
+                { q: 'What is the correct mast tilt position when travelling with a load?', options: ['Fully forward', 'Fully back (tilted rearward for stability)', 'Neutral (vertical)', 'Tilt does not matter'], answer: 1 },
+                { q: 'What should you do before raising the mast in a racking aisle?', options: ['Check overhead clearance', 'Sound the horn three times', 'Reverse out of the aisle', 'Nothing - the mast adjusts automatically'], answer: 0 },
+                { q: 'What is the load centre distance used for on a forklift?', options: ['To measure the aisle width', 'To calculate the safe load capacity at a given distance from the fork face', 'To set the fork height', 'To measure the battery level'], answer: 1 },
+                { q: 'When should you NOT use a forklift on a ramp?', options: ['When the load is light', 'When the ramp exceeds the manufacturer\'s recommended gradient', 'When it is raining', 'When the forks are empty'], answer: 1 },
+                { q: 'What is the danger of turning on a slope with a loaded forklift?', options: ['It wastes battery', 'It can cause the forklift to tip over sideways', 'It damages the tyres', 'It is perfectly safe'], answer: 1 },
+                { q: 'What does "rated capacity" mean on a forklift data plate?', options: ['The speed of the forklift', 'The maximum load the forklift can safely carry at a specified load centre', 'The battery capacity', 'The number of hours before service'], answer: 1 },
+                { q: 'What should you do if a load starts to tip while being carried?', options: ['Try to catch it with your hands', 'Brake hard and jump off', 'Lower the load carefully and reassess', 'Speed up to stabilise'], answer: 2 },
+                { q: 'What is the purpose of the overhead guard on a forklift?', options: ['To protect the operator from falling objects', 'To improve aerodynamics', 'To hold the mast in place', 'To mount lights'], answer: 0 },
+                { q: 'How should you approach racking to place a load?', options: ['At full speed to save time', 'Slowly, squarely, and with the load at the correct height', 'From the side', 'With the mast tilted forward'], answer: 1 },
+                { q: 'What is the correct procedure when leaving a forklift unattended?', options: ['Leave it running with forks raised', 'Lower forks, apply handbrake, remove key, chock wheels if on a slope', 'Leave it running for the next operator', 'Park it in the middle of the aisle'], answer: 1 },
+                { q: 'What should you do if you are unsure about the weight of a load?', options: ['Attempt to lift it and see what happens', 'Estimate based on the size', 'Check the load documentation or weigh it before lifting', 'Ask a colleague to stand nearby'], answer: 2 },
+                { q: 'What is the minimum distance you should keep from the edge of a loading dock?', options: ['30 cm', '1 metre', 'Follow site-specific rules - typically at least 0.5-1 metre unless secured', 'No distance required'], answer: 2 }
+            ]
+        },
+        {
+            id: 'set5',
+            name: 'Set 5: PIT Safety High (Advanced Operations)',
+            description: 'Test your knowledge on high-reach trucks, advanced operations, and racking safety.',
+            questions: [
+                { q: 'What additional checks are required before operating a high-reach truck?', options: ['Check the floor surface, overhead clearance, and racking condition', 'Only check the battery', 'No additional checks needed', 'Check the canteen schedule'], answer: 0 },
+                { q: 'What is the risk of operating a reach truck on an uneven floor?', options: ['Increased battery consumption', 'Risk of load instability, tip-over, or mast damage', 'Slower travel speed', 'No risk'], answer: 1 },
+                { q: 'When placing a load at height, what should you check before lowering?', options: ['That the load is centred and stable on the racking beam', 'That the aisle is wide enough', 'That the horn is working', 'Nothing - lower immediately'], answer: 0 },
+                { q: 'What is the purpose of the reach mechanism on a reach truck?', options: ['To extend the forks forward to place loads in deep racking without moving the whole truck', 'To increase travel speed', 'To raise the operator\'s platform', 'To extend the wheelbase'], answer: 0 },
+                { q: 'What should you do if racking is damaged?', options: ['Continue using it if the damage looks minor', 'Report it immediately and isolate the area', 'Repair it yourself', 'Ignore it'], answer: 1 },
+                { q: 'What is the maximum height a reach truck operator should raise the mast while travelling?', options: ['As high as needed', 'Forks should be lowered to travel height (typically 15-30 cm from the floor)', 'Half mast height', 'Full height for visibility'], answer: 1 },
+                { q: 'What does a racking load notice (beam label) tell you?', options: ['The colour of the racking', 'The maximum load per bay/beam level', 'The name of the racking supplier', 'The installation date'], answer: 1 },
+                { q: 'What is the risk of placing a load that overhangs the racking beam?', options: ['It looks untidy', 'It can fall and cause serious injury or damage', 'It uses more space', 'No risk'], answer: 1 },
+                { q: 'When should you use a spotter when operating a reach truck at height?', options: ['Never', 'When visibility is restricted or when placing/retrieving awkward loads', 'Only when a manager is present', 'Only on night shifts'], answer: 1 },
+                { q: 'What should you do if the mast does not lower smoothly?', options: ['Force it down manually', 'Continue operating', 'Stop, tag out of service, and report to maintenance', 'Increase hydraulic pressure'], answer: 2 },
+                { q: 'What is the correct way to handle a damaged pallet?', options: ['Use it if the load is light', 'Do not use it - remove it from service and replace with a safe pallet', 'Tape it up and continue', 'Stack it at the back of the racking'], answer: 1 },
+                { q: 'What is the effect of a wet or contaminated floor on PIT operations?', options: ['No effect', 'Increased stopping distance and risk of skidding', 'Faster travel', 'Better traction'], answer: 1 },
+                { q: 'What should you do before entering a cold store with a PIT?', options: ['Nothing special', 'Check equipment is rated for cold store use, wear appropriate PPE, and follow cold store entry procedures', 'Speed up to minimise time inside', 'Remove the battery'], answer: 1 },
+                { q: 'What is the purpose of a pre-use checklist?', options: ['To delay the start of work', 'To identify defects before operation and ensure the equipment is safe to use', 'To record the operator\'s name only', 'It is optional'], answer: 1 },
+                { q: 'What should you do if you are involved in a PIT incident, even a minor one?', options: ['Ignore it if no damage is visible', 'Report it immediately following site incident reporting procedures', 'Only report if someone is injured', 'Tell your manager at the end of the week'], answer: 1 }
+            ]
+        },
+        {
+            id: 'set6',
+            name: 'Set 6: TUG Walkie Operations',
+            description: 'Test your knowledge on TUG walkie (tow tractor/tugger) operations and safety.',
+            questions: [
+                { q: 'What is a TUG walkie (tow tractor/tugger)?', options: ['A forklift with a towing attachment', 'A pedestrian or ride-on powered towing vehicle used to pull trains of carts/trolleys', 'A type of walkie pallet truck', 'A manual hand truck'], answer: 1 },
+                { q: 'What must you check before attaching a train of carts to a TUG?', options: ['That the carts are the right colour', 'That the coupling is secure, carts are loaded safely, and the total weight is within the TUG\'s rated towing capacity', 'That the carts are empty', 'Nothing - just attach and go'], answer: 1 },
+                { q: 'What is the main hazard when operating a TUG with a long train of carts?', options: ['Increased battery use', 'The tail swing of the train when turning, which can strike pedestrians or racking', 'Slower charging', 'Noise'], answer: 1 },
+                { q: 'What should you do before moving off with a loaded TUG train?', options: ['Sound the horn and check the entire train is clear of obstructions', 'Move immediately', 'Check only the front cart', 'Ask a colleague to push'], answer: 0 },
+                { q: 'What is the correct speed for a TUG in a pedestrian area?', options: ['As fast as possible', 'Walking pace', '20 km/h', 'Speed does not matter'], answer: 1 },
+                { q: 'What should you do if a cart becomes uncoupled during travel?', options: ['Continue and retrieve it later', 'Stop safely, secure the TUG, and re-couple the cart following safe procedures', 'Push it with your foot', 'Leave it in the aisle'], answer: 1 },
+                { q: 'What is the danger of overloading carts in a TUG train?', options: ['It makes the carts look untidy', 'It can cause cart instability, coupling failure, or TUG brake failure', 'It uses more fuel', 'No danger'], answer: 1 },
+                { q: 'When should you NOT use a TUG?', options: ['When the battery is full', 'When the equipment has a known defect or has not passed pre-shift inspection', 'During the day shift', 'When the aisle is wide'], answer: 1 },
+                { q: 'What PPE is typically required when operating a TUG?', options: ['Hard hat only', 'Safety shoes and high-visibility vest', 'Gloves and goggles', 'No PPE required'], answer: 1 },
+                { q: 'What should you do when parking a TUG at the end of a route?', options: ['Leave it running', 'Apply the parking brake, lower any attachments, turn off, and secure the train', 'Leave it in the middle of the aisle', 'Disconnect the battery immediately'], answer: 1 },
+                { q: 'What is the correct way to navigate a TUG through a narrow aisle?', options: ['Speed up to get through quickly', 'Slow down, check clearance for the full length of the train, and proceed carefully', 'Detach the train first', 'Sound the horn continuously'], answer: 1 },
+                { q: 'What should you do if a pedestrian steps into the path of your TUG train?', options: ['Sound the horn and continue', 'Stop immediately and wait for the pedestrian to clear', 'Swerve around them', 'Flash your lights'], answer: 1 },
+                { q: 'What does the towing capacity rating on a TUG mean?', options: ['The maximum speed of the TUG', 'The maximum total weight the TUG can safely tow', 'The number of carts allowed', 'The battery capacity'], answer: 1 },
+                { q: 'What should you do if you notice the TUG is pulling to one side?', options: ['Ignore it', 'Stop, tag out of service, and report to maintenance', 'Adjust your steering to compensate', 'Continue if the load is light'], answer: 1 },
+                { q: 'What is the purpose of the dead man\'s handle (if fitted) on a TUG walkie?', options: ['To lock the steering', 'To automatically stop the TUG if the operator releases it, preventing runaway', 'To control the horn', 'To adjust the speed'], answer: 1 }
+            ]
+        },
+        {
+            id: 'set7',
+            name: 'Set 7: PPPJ (Powered Pedestrian Pallet Jack) Safety',
+            description: 'Test your knowledge on Powered Pedestrian Pallet Jack operations and safety procedures.',
+            questions: [
+                { q: 'What does PPPJ stand for?', options: ['Powered Pedestrian Pallet Jack', 'Personal Portable Pallet Jockey', 'Powered Portable Platform Jack', 'Pedestrian Pallet Push Jack'], answer: 0 },
+                { q: 'What is the primary use of a PPPJ?', options: ['Lifting loads to height', 'Moving palletised loads at ground level in a pedestrian-operated manner', 'Towing carts', 'Stacking racking'], answer: 1 },
+                { q: 'What should you check on a PPPJ before use?', options: ['Battery level, forks, wheels, horn, and brakes', 'Only the battery', 'Only the forks', 'Nothing - it is a simple machine'], answer: 0 },
+                { q: 'What is the correct operator position when using a PPPJ?', options: ['Standing on the forks', 'Standing to the side and behind the machine, out of the line of travel', 'Walking in front', 'Sitting on the load'], answer: 1 },
+                { q: 'What should you do if the PPPJ does not stop when you release the handle?', options: ['Continue using it carefully', 'Tag it out of service immediately and report to maintenance', 'Apply more pressure to the handle', 'Ignore it if the speed is slow'], answer: 1 },
+                { q: 'What is the maximum load for a standard PPPJ?', options: ['500 kg', 'Always check the data plate - it varies by model', '5000 kg', '100 kg'], answer: 1 },
+                { q: 'What should you do when approaching a dock leveller with a PPPJ?', options: ['Speed up to cross quickly', 'Slow down, check the leveller is secure and rated for the load, then cross carefully', 'Avoid dock levellers entirely', 'Raise the forks before crossing'], answer: 1 },
+                { q: 'What is the risk of using a PPPJ on a sloped surface?', options: ['No risk', 'The load can roll away or the machine can become uncontrollable', 'It uses more battery', 'It makes noise'], answer: 1 },
+                { q: 'What should you do if the forks of a PPPJ will not lower?', options: ['Force them down manually', 'Tag out of service and report to maintenance', 'Continue using it at raised height', 'Ask a colleague to stand on the forks'], answer: 1 },
+                { q: 'What is the correct way to enter a pallet with a PPPJ?', options: ['Insert forks fully and centrally into the pallet openings', 'Insert forks halfway', 'Push the pallet from the side', 'Lift the pallet from above'], answer: 0 },
+                { q: 'What should you do if a pallet is broken or damaged?', options: ['Use it if the load is light', 'Do not use it - remove from service and replace', 'Tape it up', 'Stack it in the corner'], answer: 1 },
+                { q: 'What is the danger of travelling too fast with a PPPJ?', options: ['It wastes battery', 'Reduced ability to stop safely, risk of collision with pedestrians or racking', 'It makes noise', 'No danger'], answer: 1 },
+                { q: 'What should you do when charging a PPPJ?', options: ['Charge it in the middle of the aisle', 'Charge it in the designated charging area, following site charging procedures', 'Leave it plugged in indefinitely', 'Charge it anywhere convenient'], answer: 1 },
+                { q: 'What does a flashing red light on a PPPJ typically indicate?', options: ['The machine is ready to use', 'A fault or low battery - check the manual or report to maintenance', 'The horn is active', 'The forks are raised'], answer: 1 },
+                { q: 'What should you do at the end of your shift with a PPPJ?', options: ['Leave it wherever you finished', 'Park it in the designated area, lower forks, apply brake, and plug in to charge if needed', 'Leave it running', 'Leave it in the aisle for the next operator'], answer: 1 }
+            ]
+        },
+        {
+            id: 'set8',
+            name: 'Set 8: PIT Hazard Awareness & Emergency Procedures',
+            description: 'Test your knowledge on hazard awareness, emergency responses, and incident reporting.',
+            questions: [
+                { q: 'What should you do if you see a fire while operating a PIT?', options: ['Continue working', 'Stop the PIT safely, raise the alarm, evacuate following the site emergency procedure', 'Try to extinguish it yourself first', 'Park the PIT and call a colleague'], answer: 1 },
+                { q: 'What is the correct action if a PIT tips over?', options: ['Jump off immediately', 'Stay in the seat, hold on, brace, and lean away from the direction of fall - do NOT jump', 'Try to stop the tip with your feet', 'Stand up on the seat'], answer: 1 },
+                { q: 'What should you do if you strike racking with a PIT?', options: ['Check for damage and continue if it looks minor', 'Stop, report the incident, and have the racking inspected before further use', 'Ignore it', 'Move the racking back into position yourself'], answer: 1 },
+                { q: 'What is the correct response if a load falls from a PIT?', options: ['Try to catch it', 'Move clear, stop the PIT, secure the area, and report the incident', 'Continue working around it', 'Pick it up immediately without checking'], answer: 1 },
+                { q: 'What should you do if you feel unwell while operating a PIT?', options: ['Continue until the end of the task', 'Stop the PIT safely, apply the brake, and inform your supervisor', 'Speed up to finish quickly', 'Ask a colleague to take over without stopping'], answer: 1 },
+                { q: 'What is the danger of operating a PIT while fatigued?', options: ['No danger', 'Reduced reaction time, poor judgement, and increased risk of accidents', 'Slightly slower operation', 'More battery use'], answer: 1 },
+                { q: 'What should you do if you discover a gas leak near a PIT charging area?', options: ['Continue charging', 'Do not operate any electrical equipment, evacuate, and raise the alarm', 'Open a window', 'Call maintenance only'], answer: 1 },
+                { q: 'What is the correct action if a pedestrian is struck by a PIT?', options: ['Move the PIT immediately', 'Stop, do not move the PIT unless it causes further danger, call for first aid, and report the incident', 'Continue working', 'Ask the pedestrian if they are okay and continue'], answer: 1 },
+                { q: 'What should you do if the brakes on a PIT feel spongy or unresponsive?', options: ['Continue using it carefully', 'Stop immediately, tag out of service, and report to maintenance', 'Pump the brakes repeatedly', 'Reduce speed and continue'], answer: 1 },
+                { q: 'What is the purpose of a safety audit on PIT equipment?', options: ['To delay operations', 'To identify and correct unsafe conditions or behaviours before an incident occurs', 'To check the operator\'s licence only', 'To count the number of PITs'], answer: 1 },
+                { q: 'What should you do if you are asked to operate a PIT you are not trained on?', options: ['Try it - it is probably similar', 'Refuse politely and inform your supervisor', 'Ask a colleague to show you quickly', 'Operate it slowly'], answer: 1 },
+                { q: 'What is the correct response to a near-miss incident?', options: ['Ignore it - no one was hurt', 'Report it through the site near-miss reporting system so it can be investigated and prevented', 'Tell a colleague informally', 'Only report if it happens again'], answer: 1 },
+                { q: 'What should you do if you notice oil or hydraulic fluid leaking from a PIT?', options: ['Continue using it', 'Stop, tag out of service, clean up the spill safely, and report to maintenance', 'Add more fluid yourself', 'Ignore small leaks'], answer: 1 },
+                { q: 'What is the purpose of the emergency stop button on a PIT?', options: ['To turn off the lights', 'To immediately cut power to the drive and hydraulics in an emergency', 'To sound the horn', 'To lock the steering'], answer: 1 },
+                { q: 'What should you do if you are unsure about a safety procedure?', options: ['Guess and proceed', 'Stop, ask your supervisor or refer to the site safety documentation before continuing', 'Ask a colleague who may also be unsure', 'Ignore it'], answer: 1 }
+            ]
+        },
+        {
+            id: 'set9',
+            name: 'Set 9: PIT Licence, Compliance & Site Rules',
+            description: 'Test your knowledge on PIT licensing, compliance requirements, and site-specific rules. Pass mark: 80%.',
+            questions: [
+                { q: 'What does PIT stand for in a warehouse/fulfilment centre context?', options: ['Powered Industrial Truck', 'Personal Identification Tag', 'Process Improvement Tool', 'Pallet Inspection Technique'], answer: 0 },
+                { q: 'What is the minimum passing score required for the PIT quiz?', options: ['70%', '75%', '80%', '90%'], answer: 2 },
+                { q: 'Before operating a PIT, what must an associate have?', options: ['A valid PIT licence issued by their manager', 'Completed a verbal briefing only', 'Watched a safety video', 'No requirement - anyone can operate a PIT'], answer: 0 },
+                { q: 'How often must a PIT licence be renewed (refresher training)?', options: ['Every 6 months', 'Every 1 year', 'Every 2 years', 'Every 3 years'], answer: 3 },
+                { q: 'What should you do if your PIT licence has expired?', options: ['Continue operating until a new licence is issued', 'Ask a colleague to cover for you', 'Stop operating the PIT immediately and notify your manager', 'Operate only during quiet periods'], answer: 2 },
+                { q: 'Which of the following is a pre-use check you must complete before operating a PIT?', options: ['Check the fuel level only', 'Inspect tyres, forks, brakes, lights, and horn', 'Ask a colleague if the PIT is safe', 'No pre-use check is required'], answer: 1 },
+                { q: 'What is the correct action if you identify a fault during a pre-use check?', options: ['Continue using the PIT if the fault seems minor', 'Tag the PIT as out of service and report it immediately', 'Fix the fault yourself before using it', 'Use a different PIT without reporting the fault'], answer: 1 },
+                { q: 'When travelling with a load on a PIT, the forks should be:', options: ['Raised as high as possible for visibility', 'Lowered to a safe travel height (approx. 15-20 cm from the ground)', 'At ground level', 'Position does not matter'], answer: 1 },
+                { q: 'What must you do when approaching a pedestrian crossing or blind corner in the FC?', options: ['Speed up to clear the area quickly', 'Sound the horn and slow down', 'Flash your lights only', 'No action required if you have right of way'], answer: 1 },
+                { q: 'Who is responsible for ensuring associates have a valid PIT licence before assigning them to PIT tasks?', options: ['The associate themselves only', 'The site safety team only', 'The manager/supervisor', 'HR department'], answer: 2 },
+                { q: 'What does "compliance" mean in the context of PIT Safety training?', options: ['The associate has started but not completed the training', 'The associate holds a valid, non-expired PIT licence', 'The associate has been briefed verbally', 'The associate has signed a disclaimer form'], answer: 1 },
+                { q: 'If an associate is clocked in and operating a PIT without a valid licence, what is the training priority classification?', options: ['Very Low', 'Low', 'Medium', 'High'], answer: 3 },
+                { q: 'Which of the following is NOT a type of PIT commonly found in a fulfilment centre?', options: ['Walkie Stacker', 'Reach Truck', 'Forklift', 'Conveyor Belt'], answer: 3 },
+                { q: 'What should you do if you are involved in or witness a PIT incident on site?', options: ['Continue working and report it at the end of the shift', 'Stop, make the area safe, and report it immediately to your manager and safety team', 'Only report it if someone is injured', 'Report it anonymously via email'], answer: 1 },
+                { q: 'Where can associates and managers check current PIT licence compliance status for the site?', options: ['The associate\'s personal email', 'The Safety Training Compliance dashboard', 'A paper-based register only', 'The HR portal'], answer: 1 }
+            ]
+        },
+        {
+            id: 'set10',
+            name: 'Set 10: PIT Safety - High Priority Quiz',
+            description: 'Final assessment covering licence compliance, high priority training status, and critical PIT safety rules. Pass mark: 80%.',
+            questions: [
+                { q: 'What does a "High Priority" training status mean for a PIT associate?', options: ['The training is optional but recommended', 'The associate\'s licence has expired or is about to expire and they must not operate a PIT', 'The associate needs a refresher within the next 6 months', 'The associate is new and needs an induction'], answer: 1 },
+                { q: 'An associate\'s PIT licence expired yesterday. What is the correct action?', options: ['Allow them to continue operating until a new licence is arranged', 'Remove them from PIT duties immediately and arrange retraining', 'Let them operate under supervision until retrained', 'Issue a verbal warning and monitor them'], answer: 1 },
+                { q: 'Which situation would result in a "High Priority - Expired" training classification?', options: ['An associate who has never been eligible for PIT', 'An associate whose PIT licence expiry date has passed', 'An associate who is on annual leave', 'An associate who is clocked out'], answer: 1 },
+                { q: 'Before operating a PIT at the start of a shift, what is mandatory?', options: ['A verbal confirmation from a colleague that the PIT is safe', 'A full pre-use inspection of the PIT', 'Checking the PIT was used the previous shift without issues', 'No check is required if the PIT was serviced recently'], answer: 1 },
+                { q: 'During a pre-use check, you notice the horn on the PIT is not working. What should you do?', options: ['Use the PIT carefully and report the fault at the end of the shift', 'Take the PIT out of service, tag it, and report it to your manager immediately', 'Use the PIT only in areas with no pedestrians', 'Fix the horn yourself before using the PIT'], answer: 1 },
+                { q: 'What is the maximum safe travel height for forks when moving a PIT with a load?', options: ['As high as needed for visibility', 'At ground level (0 cm)', 'Approximately 15-20 cm from the ground', 'Half the height of the load'], answer: 2 },
+                { q: 'A PIT operator is approaching a blind corner in the fulfilment centre. What must they do?', options: ['Speed up to pass quickly and reduce risk', 'Sound the horn and slow down before proceeding', 'Flash the lights and continue at normal speed', 'Stop and wait for a colleague to check the corner'], answer: 1 },
+                { q: 'Which of the following is a serious safety violation when operating a PIT?', options: ['Travelling with forks lowered', 'Carrying an unauthorised passenger on the PIT', 'Sounding the horn at a pedestrian crossing', 'Performing a pre-use check before each shift'], answer: 1 },
+                { q: 'What must a manager do before assigning an associate to PIT tasks?', options: ['Ask the associate if they feel confident', 'Verify the associate holds a valid, non-expired PIT licence', 'Check if the associate has operated a PIT before, regardless of licence status', 'No check is required if the associate has worked at the site for over a year'], answer: 1 },
+                { q: 'A PIT is involved in a near-miss incident. What is the correct procedure?', options: ['Continue operations and log it in the end-of-day report', 'Stop operations, make the area safe, and report it immediately to the manager and safety team', 'Only report it if someone was injured', 'Report it anonymously at the end of the week'], answer: 1 },
+                { q: 'What does it mean when an associate is marked as "eligible" for PIT Safety training?', options: ['They have already completed and passed the training', 'They meet the criteria to be required to hold a valid PIT licence', 'They are exempt from PIT training', 'They are new starters who have not yet been assessed'], answer: 1 },
+                { q: 'Which is the correct speed behaviour when operating a PIT near pedestrians?', options: ['Maintain normal operating speed - pedestrians should move out of the way', 'Reduce speed significantly and give way to pedestrians at all times', 'Sound the horn continuously and maintain speed', 'Stop the PIT only if a pedestrian steps in front of you'], answer: 1 },
+                { q: 'An associate\'s PIT licence is due to expire in 7 days. What should happen?', options: ['Wait until it expires before arranging retraining', 'Proactively arrange refresher training before the expiry date to avoid a lapse in compliance', 'Allow the associate to continue operating for up to 30 days after expiry', 'No action needed - the system will automatically renew the licence'], answer: 1 },
+                { q: 'What is the consequence of operating a PIT without a valid licence?', options: ['A verbal warning on the first offence', 'A risk of serious injury, disciplinary action, and a site safety compliance breach', 'No consequence if no incident occurs', 'A written note added to the associate\'s file only'], answer: 1 },
+                { q: 'Where should managers go to check which associates are currently non-compliant (High Priority) for PIT Safety training?', options: ['The associate\'s personal HR file', 'A paper-based register at the site entrance', 'The Safety Training Compliance dashboard, filtered by PIT Safety and High Priority', 'The associate\'s email inbox'], answer: 2 }
+            ]
+        }
     ];
 
     let currentSetIndex = -1;
