@@ -5,175 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Safety Quiz</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Amazon Ember', 'Segoe UI', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            min-height: 100vh; padding: 20px;
         }
-        
         .container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden;
+            max-width: 700px; margin: 0 auto; background: white;
+            border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden;
         }
-        
         .header {
             background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
+            color: white; padding: 30px 20px; text-align: center;
         }
-        
-        .header h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        
-        .content {
-            padding: 30px;
-        }
-        
-        .quiz-intro {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .quiz-intro h2 {
-            color: #232f3e;
-            margin-bottom: 15px;
-        }
-        
-        .quiz-intro p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .question-container {
-            display: none;
-        }
-        
-        .question-container.active {
-            display: block;
-        }
-        
-        .question {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .question h3 {
-            color: #232f3e;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .content { padding: 30px; }
+        .quiz-intro { text-align: center; margin-bottom: 30px; }
+        .quiz-intro h2 { color: #232f3e; margin-bottom: 15px; }
+        .quiz-intro p { color: #666; line-height: 1.6; }
+        .question { background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .question h3 { color: #232f3e; margin-bottom: 15px; font-size: 18px; }
+        .options { display: flex; flex-direction: column; gap: 10px; }
         .option {
-            padding: 15px;
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
+            padding: 15px; background: white; border: 2px solid #e0e0e0;
+            border-radius: 8px; cursor: pointer; transition: all 0.3s;
         }
-        
-        .option:hover {
-            border-color: #2196F3;
-            background: #f0f8ff;
-        }
-        
-        .option.selected {
-            border-color: #2196F3;
-            background: #e3f2fd;
-        }
-        
-        .option.correct {
-            border-color: #4CAF50;
-            background: #e8f5e9;
-        }
-        
-        .option.wrong {
-            border-color: #dc3545;
-            background: #ffebee;
-        }
-        
+        .option:hover { border-color: #2196F3; background: #f0f8ff; }
+        .option.selected { border-color: #2196F3; background: #e3f2fd; }
         .button {
-            padding: 12px 30px;
-            background: #2196F3;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
+            padding: 12px 30px; background: #2196F3; color: white; border: none;
+            border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer;
         }
-        
-        .button:hover {
-            background: #1976D2;
+        .button:hover { background: #1976D2; }
+        .button:disabled { background: #ccc; cursor: not-allowed; }
+        .result-container { display: none; text-align: center; }
+        .result-container.show { display: block; }
+        .score { font-size: 48px; font-weight: bold; color: #2196F3; margin: 20px 0; }
+        .award { font-size: 80px; margin: 20px 0; }
+        .award-text { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+        .progress { background: #e0e0e0; height: 8px; border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
+        .progress-bar { background: #2196F3; height: 100%; transition: width 0.3s; }
+        /* Set selector */
+        .set-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+        .set-item {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px;
+            cursor: pointer; transition: all 0.3s;
         }
-        
-        .button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-        
-        .result-container {
-            display: none;
-            text-align: center;
-        }
-        
-        .result-container.show {
-            display: block;
-        }
-        
-        .score {
-            font-size: 48px;
-            font-weight: bold;
-            color: #2196F3;
-            margin: 20px 0;
-        }
-        
-        .award {
-            font-size: 80px;
-            margin: 20px 0;
-        }
-        
-        .award-text {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .progress {
-            background: #e0e0e0;
-            height: 8px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        
-        .progress-bar {
-            background: #2196F3;
-            height: 100%;
-            transition: width 0.3s;
+        .set-item:hover { border-color: #2196F3; background: #f0f8ff; }
+        .set-item.completed { border-color: #4CAF50; background: #e8f5e9; cursor: default; }
+        .set-item.locked { border-color: #e0e0e0; background: #f5f5f5; cursor: not-allowed; opacity: 0.6; }
+        .set-item.active { border-color: #2196F3; background: #e3f2fd; }
+        .set-item .set-info { display: flex; flex-direction: column; }
+        .set-item .set-name { font-weight: bold; color: #232f3e; font-size: 15px; }
+        .set-item .set-status { font-size: 12px; color: #666; margin-top: 3px; }
+        .set-item .set-badge { font-size: 24px; }
+        .practice-note {
+            background: #fff3cd; padding: 12px; border-radius: 8px;
+            border-left: 4px solid #ffc107; margin-bottom: 15px; font-size: 13px; color: #856404;
         }
     </style>
 </head>
@@ -181,40 +71,40 @@
     <div class="container">
         <div class="header">
             <h1>🎮 PIT Safety Quiz</h1>
-            <p>Set 1: PIT Basics & Operations</p>
+            <p id="headerSubtitle">Select a Quiz Set</p>
         </div>
-        
         <div class="content">
+            <!-- Set Selector -->
+            <div id="setSelector">
+                <div class="quiz-intro">
+                    <h2>Quiz Sets</h2>
+                    <p>Complete each set to unlock the next one. Score 80%+ to pass.</p>
+                </div>
+                <div id="practiceNote" class="practice-note" style="display:none;">
+                    All sets completed! You can practice any set again, but no new awards will be given.
+                </div>
+                <div class="set-list" id="setList"></div>
+                <br>
+                <button class="button" onclick="window.close()" style="background:#666;">Close</button>
+            </div>
+
             <!-- Quiz Intro -->
-            <div id="quizIntro" class="quiz-intro">
-                <h2>PIT Safety Quiz - Set 1</h2>
-                <p>
-                    Test your knowledge about Powered Industrial Truck (PIT) safety.
-                    <br><br>
-                    <strong>Rules:</strong>
-                    <br>• 10 multiple choice questions
-                    <br>• Score 90%+ for Gold Badge 🥇
-                    <br>• Score 80-89% for Silver Badge 🥈
-                    <br>• Below 80% = Not Passed, try again!
-                    <br><br>
-                    Good luck!
-                </p>
+            <div id="quizIntro" style="display:none;" class="quiz-intro">
+                <h2 id="introTitle"></h2>
+                <p id="introDesc"></p>
+                <br>
                 <button class="button" onclick="startQuiz()">Start Quiz</button>
             </div>
-            
+
             <!-- Progress Bar -->
-            <div id="progressContainer" style="display: none;">
-                <div class="progress">
-                    <div id="progressBar" class="progress-bar" style="width: 0%"></div>
-                </div>
-                <p style="text-align: center; color: #666; margin-bottom: 20px;">
+            <div id="progressContainer" style="display:none;">
+                <div class="progress"><div id="progressBar" class="progress-bar" style="width:0%"></div></div>
+                <p style="text-align:center;color:#666;margin-bottom:20px;">
                     Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span>
                 </p>
             </div>
-            
-            <!-- Questions -->
             <div id="questionsContainer"></div>
-            
+
             <!-- Result -->
             <div id="resultContainer" class="result-container">
                 <h2>Quiz Complete!</h2>
@@ -223,245 +113,230 @@
                 <div class="award-text" id="awardText"></div>
                 <p id="resultMessage"></p>
                 <br>
-                <button class="button" onclick="restartQuiz()">Try Again</button>
-                <button class="button" onclick="window.close()" style="background: #666; margin-left: 10px;">Close</button>
+                <button class="button" onclick="restartQuiz()" id="tryAgainBtn">Try Again</button>
+                <button class="button" onclick="backToSets()" style="background:#666;margin-left:10px;">Back to Sets</button>
             </div>
         </div>
     </div>
-    
     <script>
-        const questions = [
-            {
-                question: "What does PIT stand for?",
-                options: [
-                    "Powered Industrial Truck",
-                    "Personal Industrial Tool",
-                    "Portable Industrial Transport",
-                    "Powered Internal Transport"
-                ],
-                correct: 0
-            },
-            {
-                question: "Before operating a PIT, what must an operator do?",
-                options: [
-                    "Start the engine immediately",
-                    "Perform a pre-shift inspection",
-                    "Load the forks to maximum capacity",
-                    "Check the weather forecast"
-                ],
-                correct: 1
-            },
-            {
-                question: "What should you do if you find a defect during a PIT pre-shift inspection?",
-                options: [
-                    "Continue operating if the defect seems minor",
-                    "Report it to a colleague and keep using it",
-                    "Remove the PIT from service and report it immediately",
-                    "Fix it yourself before starting your shift"
-                ],
-                correct: 2
-            },
-            {
-                question: "When traveling with a load on a PIT, the forks should be:",
-                options: [
-                    "Raised as high as possible for visibility",
-                    "Lowered to a safe travel height (typically 15\u201320 cm from the ground)",
-                    "Tilted forward to balance the load",
-                    "Positioned at shoulder height"
-                ],
-                correct: 1
-            },
-            {
-                question: "What is the most common cause of PIT-related fatalities in the workplace?",
-                options: [
-                    "Mechanical failure",
-                    "Speeding",
-                    "Tip-overs / overturns",
-                    "Battery malfunction"
-                ],
-                correct: 2
-            },
-            {
-                question: "If a PIT begins to tip over, what should the operator do?",
-                options: [
-                    "Jump off the truck immediately",
-                    "Stay in the seat, hold on tightly, and lean away from the direction of fall",
-                    "Try to stop the tip by putting their foot on the ground",
-                    "Stand up and jump clear"
-                ],
-                correct: 1
-            },
-            {
-                question: "Who is authorized to operate a PIT?",
-                options: [
-                    "Any employee on the warehouse floor",
-                    "Only employees who have completed certified PIT safety training",
-                    "Any employee with a driving licence",
-                    "Supervisors and managers only"
-                ],
-                correct: 1
-            },
-            {
-                question: "What does the load capacity plate on a PIT indicate?",
-                options: [
-                    "The maximum speed of the truck",
-                    "The weight of the truck itself",
-                    "The maximum load the truck can safely carry",
-                    "The battery charge level"
-                ],
-                correct: 2
-            },
-            {
-                question: "When should a PIT operator sound the horn?",
-                options: [
-                    "Only in emergencies",
-                    "At intersections, blind spots, and when pedestrians are nearby",
-                    "Every 5 minutes during operation",
-                    "Only when reversing"
-                ],
-                correct: 1
-            },
-            {
-                question: "How often must PIT operator certifications be renewed?",
-                options: [
-                    "Every 6 months",
-                    "Every 5 years",
-                    "Every 3 years (or sooner if unsafe operation is observed)",
-                    "Only once \u2014 no renewal required"
-                ],
-                correct: 2
-            }
-        ];
-        
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let answers = [];
-        
-        function startQuiz() {
-            document.getElementById('quizIntro').style.display = 'none';
-            document.getElementById('progressContainer').style.display = 'block';
-            document.getElementById('totalQuestions').textContent = questions.length;
-            showQuestion(0);
-        }
-        
-        function showQuestion(index) {
-            currentQuestionIndex = index;
-            document.getElementById('currentQuestion').textContent = index + 1;
-            
-            const progress = ((index) / questions.length) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
-            
-            const container = document.getElementById('questionsContainer');
-            const q = questions[index];
-            
-            let html = `
-                <div class="question-container active">
-                    <div class="question">
-                        <h3>Q${index + 1}. ${q.question}</h3>
-                    </div>
-                    <div class="options">
-            `;
-            
-            q.options.forEach((option, i) => {
-                html += `
-                    <div class="option" onclick="selectOption(${i})">
-                        ${option}
-                    </div>
-                `;
-            });
-            
-            html += `
-                    </div>
-                    <br>
-                    <button class="button" id="nextBtn" onclick="nextQuestion()" disabled>
-                        ${index < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
-                    </button>
-                </div>
-            `;
-            
-            container.innerHTML = html;
-        }
-        
-        function selectOption(optionIndex) {
-            const options = document.querySelectorAll('.option');
-            options.forEach(opt => opt.classList.remove('selected'));
-            options[optionIndex].classList.add('selected');
-            
-            answers[currentQuestionIndex] = optionIndex;
-            document.getElementById('nextBtn').disabled = false;
-        }
-        
-        function nextQuestion() {
-            if (currentQuestionIndex < questions.length - 1) {
-                showQuestion(currentQuestionIndex + 1);
+    // Get login from URL param
+    const urlParams = new URLSearchParams(window.location.search);
+    const userLogin = urlParams.get('login') || 'unknown';
+
+    // All quiz sets - Set 1 has questions, Sets 2-10 are placeholders
+    const allSets = [
+        {
+            id: 'set1',
+            name: 'Set 1: PIT Basics & Operations',
+            description: 'Test your knowledge on PIT fundamentals, safety rules, and basic operations.',
+            questions: [
+                { q: 'What does PIT stand for?', options: ['Powered Industrial Truck', 'Personal Industrial Tool', 'Portable Industrial Transport', 'Power Integrated Technology'], answer: 0 },
+                { q: 'Before operating a PIT, what must you always do first?', options: ['Check your phone', 'Perform a pre-operation inspection', 'Warm up the engine for 10 minutes', 'Load the cargo first'], answer: 1 },
+                { q: 'What is the maximum speed limit for PIT in most warehouse areas?', options: ['15 km/h', '25 km/h', '8 km/h', '20 km/h'], answer: 2 },
+                { q: 'When should you sound the horn on a PIT?', options: ['Only when backing up', 'At intersections and blind corners', 'Only in emergencies', 'Every 5 minutes'], answer: 1 },
+                { q: 'What should you do if you find a defect during pre-operation inspection?', options: ['Use it anyway if the defect is minor', 'Report it and tag out the equipment', 'Fix it yourself', 'Ignore it until next shift'], answer: 1 },
+                { q: 'How should forks be positioned when traveling without a load?', options: ['Raised high for visibility', 'Lowered to approximately 10-15 cm from the ground', 'At waist height', 'Tilted forward'], answer: 1 },
+                { q: 'What is the proper way to travel on a ramp with a loaded forklift?', options: ['Load facing downhill', 'Load facing uphill', 'Sideways for stability', 'Speed up to maintain momentum'], answer: 1 },
+                { q: 'Who is allowed to operate a PIT?', options: ['Anyone in the warehouse', 'Only trained and certified operators', 'Supervisors only', 'Anyone with a driving license'], answer: 1 },
+                { q: 'What should you do when approaching a pedestrian?', options: ['Speed up to pass quickly', 'Slow down, make eye contact, and yield', 'Sound horn continuously', 'Flash your lights'], answer: 1 },
+                { q: 'What is the 3-point rule for mounting/dismounting a PIT?', options: ['3 people must be present', 'Always maintain 3 points of contact (2 hands + 1 foot or 2 feet + 1 hand)', 'Wait 3 seconds before moving', 'Check 3 mirrors'], answer: 1 }
+            ]
+        },
+        { id: 'set2', name: 'Set 2: PIT Hazard Awareness', description: 'Coming soon - Identify and avoid common PIT hazards.', questions: [] },
+        { id: 'set3', name: 'Set 3: Load Handling & Stability', description: 'Coming soon - Proper load handling techniques.', questions: [] },
+        { id: 'set4', name: 'Set 4: Pedestrian Safety', description: 'Coming soon - Keeping pedestrians safe around PIT.', questions: [] },
+        { id: 'set5', name: 'Set 5: Emergency Procedures', description: 'Coming soon - What to do in emergency situations.', questions: [] },
+        { id: 'set6', name: 'Set 6: Workplace Environment', description: 'Coming soon - Safe operating environment.', questions: [] },
+        { id: 'set7', name: 'Set 7: Maintenance & Inspection', description: 'Coming soon - Equipment care and inspection.', questions: [] },
+        { id: 'set8', name: 'Set 8: Regulations & Compliance', description: 'Coming soon - Rules and regulations.', questions: [] },
+        { id: 'set9', name: 'Set 9: Advanced Operations', description: 'Coming soon - Advanced PIT techniques.', questions: [] },
+        { id: 'set10', name: 'Set 10: Final Assessment', description: 'Coming soon - Comprehensive final quiz.', questions: [] }
+    ];
+
+    let currentSetIndex = -1;
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let selectedAnswers = [];
+    let isPracticeMode = false;
+
+    function getAwards() {
+        return JSON.parse(localStorage.getItem('pitQuizAwards_' + userLogin) || '{}');
+    }
+
+    function saveAward(setId, setName, scorePercent) {
+        const awards = getAwards();
+        awards[setId] = {
+            award: scorePercent >= 90 ? '🏆' : '🥈',
+            score: scorePercent,
+            setName: setName,
+            date: new Date().toLocaleDateString()
+        };
+        localStorage.setItem('pitQuizAwards_' + userLogin, JSON.stringify(awards));
+    }
+
+    function getCompletedCount() {
+        const awards = getAwards();
+        let count = 0;
+        allSets.forEach(function(s) { if (awards[s.id]) count++; });
+        return count;
+    }
+
+    function renderSetSelector() {
+        const awards = getAwards();
+        const completedCount = getCompletedCount();
+        const totalWithQuestions = allSets.filter(function(s) { return s.questions.length > 0; }).length;
+        isPracticeMode = completedCount >= totalWithQuestions && totalWithQuestions > 0;
+        document.getElementById('practiceNote').style.display = isPracticeMode ? 'block' : 'none';
+
+        const list = document.getElementById('setList');
+        list.innerHTML = '';
+        let foundNextAvailable = false;
+
+        allSets.forEach(function(set, idx) {
+            const isCompleted = !!awards[set.id];
+            const hasQuestions = set.questions.length > 0;
+            let status, badge, cls;
+
+            if (isCompleted) {
+                status = 'Passed (' + awards[set.id].score + '%)';
+                badge = awards[set.id].award;
+                cls = 'completed';
+            } else if (!hasQuestions) {
+                status = 'Coming soon';
+                badge = '🔒';
+                cls = 'locked';
+            } else if (isPracticeMode) {
+                status = 'Practice mode';
+                badge = '🔄';
+                cls = 'active';
+            } else if (!foundNextAvailable) {
+                status = 'Available';
+                badge = '▶️';
+                cls = 'active';
+                foundNextAvailable = true;
             } else {
-                showResults();
+                status = 'Locked';
+                badge = '🔒';
+                cls = 'locked';
             }
-        }
-        
-        function showResults() {
-            // Calculate score
-            score = 0;
-            questions.forEach((q, i) => {
-                if (answers[i] === q.correct) {
-                    score++;
-                }
-            });
-            
-            const percentage = Math.round((score / questions.length) * 100);
-            
-            // Determine award
-            let award = '';
-            let awardText = '';
-            let message = '';
-            
-            if (percentage >= 90) {
-                award = '🥇';
-                awardText = 'GOLD BADGE!';
-                message = 'Outstanding! You are a PIT safety champion!';
-            } else if (percentage >= 80) {
-                award = '🥈';
-                awardText = 'SILVER BADGE!';
-                message = 'Great job! You passed the PIT safety quiz!';
+
+            var div = document.createElement('div');
+            div.className = 'set-item ' + cls;
+            div.innerHTML = '<div class="set-info"><span class="set-name">' + set.name + '</span>' +
+                '<span class="set-status">' + status + '</span></div>' +
+                '<span class="set-badge">' + badge + '</span>';
+
+            if (cls === 'active' || (cls === 'completed' && isPracticeMode)) {
+                div.onclick = (function(i) { return function() { selectSet(i); }; })(idx);
+                div.style.cursor = 'pointer';
+            }
+            list.appendChild(div);
+        });
+    }
+
+    function selectSet(idx) {
+        currentSetIndex = idx;
+        var set = allSets[idx];
+        document.getElementById('setSelector').style.display = 'none';
+        document.getElementById('quizIntro').style.display = 'block';
+        document.getElementById('introTitle').textContent = set.name;
+        var desc = set.description;
+        if (isPracticeMode) desc += '\n\nPractice Mode - no new awards will be given.';
+        document.getElementById('introDesc').textContent = desc;
+        document.getElementById('headerSubtitle').textContent = set.name;
+    }
+
+    function startQuiz() {
+        currentQuestionIndex = 0; score = 0; selectedAnswers = [];
+        document.getElementById('quizIntro').style.display = 'none';
+        document.getElementById('progressContainer').style.display = 'block';
+        document.getElementById('totalQuestions').textContent = allSets[currentSetIndex].questions.length;
+        showQuestion();
+    }
+
+    function showQuestion() {
+        var set = allSets[currentSetIndex];
+        var q = set.questions[currentQuestionIndex];
+        var total = set.questions.length;
+        document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+        document.getElementById('progressBar').style.width = ((currentQuestionIndex / total) * 100) + '%';
+        var container = document.getElementById('questionsContainer');
+        var html = '<div class="question"><h3>Q' + (currentQuestionIndex + 1) + '. ' + q.q + '</h3><div class="options">';
+        q.options.forEach(function(opt, i) {
+            html += '<div class="option" onclick="selectOption(' + i + ')" id="opt' + i + '">' + opt + '</div>';
+        });
+        html += '</div></div><button class="button" id="nextBtn" onclick="nextQuestion()" disabled>Next</button>';
+        container.innerHTML = html;
+    }
+
+    function selectOption(idx) {
+        document.querySelectorAll('.option').forEach(function(el) { el.classList.remove('selected'); });
+        document.getElementById('opt' + idx).classList.add('selected');
+        selectedAnswers[currentQuestionIndex] = idx;
+        document.getElementById('nextBtn').disabled = false;
+    }
+
+    function nextQuestion() {
+        var set = allSets[currentSetIndex];
+        if (selectedAnswers[currentQuestionIndex] === set.questions[currentQuestionIndex].answer) score++;
+        currentQuestionIndex++;
+        if (currentQuestionIndex < set.questions.length) showQuestion();
+        else showResults();
+    }
+
+    function showResults() {
+        var set = allSets[currentSetIndex];
+        var total = set.questions.length;
+        var pct = Math.round((score / total) * 100);
+        var passed = pct >= 80;
+
+        document.getElementById('progressContainer').style.display = 'none';
+        document.getElementById('questionsContainer').innerHTML = '';
+        document.getElementById('resultContainer').classList.add('show');
+        document.getElementById('finalScore').textContent = pct + '%';
+
+        var awardBadge = document.getElementById('awardBadge');
+        var awardText = document.getElementById('awardText');
+        var resultMsg = document.getElementById('resultMessage');
+        var tryAgainBtn = document.getElementById('tryAgainBtn');
+
+        if (passed) {
+            if (pct >= 90) {
+                awardBadge.textContent = '🏆'; awardText.textContent = 'Gold Award!'; awardText.style.color = '#FFD700';
             } else {
-                award = '📚';
-                awardText = 'NOT PASSED';
-                message = 'You need 80% or higher to pass. Review the safety tips and try again!';
+                awardBadge.textContent = '🥈'; awardText.textContent = 'Silver Award!'; awardText.style.color = '#C0C0C0';
             }
-            
-            // Save award to localStorage if passed (80%+)
-            if (percentage >= 80) {
-                const quizData = JSON.parse(localStorage.getItem('pitQuizAwards') || '{}');
-                const setKey = 'set1';
-                // Only save if better than previous score
-                if (!quizData[setKey] || percentage > quizData[setKey].score) {
-                    quizData[setKey] = {
-                        score: percentage,
-                        award: award,
-                        awardText: awardText,
-                        date: new Date().toISOString().split('T')[0],
-                        setName: 'PIT Basics & Operations'
-                    };
-                    localStorage.setItem('pitQuizAwards', JSON.stringify(quizData));
-                }
+            if (isPracticeMode) {
+                resultMsg.textContent = 'Great job! (Practice mode - no new award saved)';
+                tryAgainBtn.style.display = 'inline-block';
+            } else {
+                saveAward(set.id, set.name, pct);
+                resultMsg.textContent = 'Congratulations! Award saved to your badge.';
+                tryAgainBtn.style.display = 'none';
             }
-            
-            document.getElementById('progressContainer').style.display = 'none';
-            document.getElementById('questionsContainer').style.display = 'none';
-            document.getElementById('resultContainer').classList.add('show');
-            document.getElementById('finalScore').textContent = percentage + '%';
-            document.getElementById('awardBadge').textContent = award;
-            document.getElementById('awardText').textContent = awardText;
-            document.getElementById('resultMessage').textContent = message;
+        } else {
+            awardBadge.textContent = '😔'; awardText.textContent = 'Not Passed'; awardText.style.color = '#666';
+            resultMsg.textContent = 'You need 80% to pass. Score: ' + score + '/' + total;
+            tryAgainBtn.style.display = 'inline-block';
         }
-        
-        function restartQuiz() {
-            currentQuestionIndex = 0;
-            score = 0;
-            answers = [];
-            document.getElementById('resultContainer').classList.remove('show');
-            document.getElementById('quizIntro').style.display = 'block';
-        }
+    }
+
+    function restartQuiz() {
+        document.getElementById('resultContainer').classList.remove('show');
+        startQuiz();
+    }
+
+    function backToSets() {
+        document.getElementById('resultContainer').classList.remove('show');
+        document.getElementById('progressContainer').style.display = 'none';
+        document.getElementById('questionsContainer').innerHTML = '';
+        document.getElementById('quizIntro').style.display = 'none';
+        document.getElementById('setSelector').style.display = 'block';
+        document.getElementById('headerSubtitle').textContent = 'Select a Quiz Set';
+        renderSetSelector();
+    }
+
+    renderSetSelector();
     </script>
 </body>
 </html>
