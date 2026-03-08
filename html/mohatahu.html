@@ -730,7 +730,7 @@
         function openQuiz() {
             // URL untuk halaman quiz game
             // Bisa diganti dengan URL quiz system
-            const quizUrl = '../quiz.html?v=' + Date.now();
+            const quizUrl = 'https://dsa6.github.io/pit-badges/quiz.html?login=mohatahu&v=' + Date.now();
             window.open(quizUrl, '_blank');
         }
         
@@ -739,9 +739,12 @@
             window.open('https://pulse.amazon/application/DHORBHYS', '_blank');
         }
 
+        // Cleanup old shared award data (awards are now per-login)
+        localStorage.removeItem('pitQuizAwards');
+
         // Load and display quiz awards from localStorage
         function loadQuizAwards() {
-            const quizData = JSON.parse(localStorage.getItem('pitQuizAwards') || '{}');
+            const quizData = JSON.parse(localStorage.getItem('pitQuizAwards_mohatahu') || '{}');
             const keys = Object.keys(quizData);
             if (keys.length === 0) return;
             
@@ -781,6 +784,20 @@
             setTimeout(loadQuizAwards, 500);
             return result;
         };
+
+        // Auto-refresh awards when quiz saves data in another tab
+        window.addEventListener('storage', function(e) {
+            if (e.key && e.key.indexOf('pitQuizAwards_') === 0) {
+                loadQuizAwards();
+            }
+        });
+
+        // Also refresh when user comes back to this tab
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                loadQuizAwards();
+            }
+        });
 
     </script>
 </body>
