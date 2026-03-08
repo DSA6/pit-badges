@@ -132,7 +132,7 @@
             questions: [
                 { q: 'What does PIT stand for?', options: ['Powered Industrial Truck', 'Personal Industrial Tool', 'Portable Industrial Transport', 'Power Integrated Technology'], answer: 0 },
                 { q: 'Before operating a PIT, what must you always do first?', options: ['Check your phone', 'Perform a pre-operation inspection', 'Warm up the engine for 10 minutes', 'Load the cargo first'], answer: 1 },
-                { q: 'What is the maximum speed limit for PIT in most warehouse areas?', options: ['15 km/h', '25 km/h', '8 km/h', '20 km/h'], answer: 2 },
+                { q: 'What is the maximum speed limit for a PIT walkie in most warehouse areas?', options: ['8 km/h', '4 km/h', '10 km/h', '15 km/h'], answer: 1 },
                 { q: 'When should you sound the horn on a PIT?', options: ['Only when backing up', 'At intersections and blind corners', 'Only in emergencies', 'Every 5 minutes'], answer: 1 },
                 { q: 'What should you do if you find a defect during pre-operation inspection?', options: ['Use it anyway if the defect is minor', 'Report it and tag out the equipment', 'Fix it yourself', 'Ignore it until next shift'], answer: 1 },
                 { q: 'How should forks be positioned when traveling without a load?', options: ['Raised high for visibility', 'Lowered to approximately 10-15 cm from the ground', 'At waist height', 'Tilted forward'], answer: 1 },
@@ -500,7 +500,7 @@
                 tryAgainBtn.style.display = 'inline-block';
             } else {
                 saveAward(set.id, set.name, pct);
-                resultMsg.textContent = 'Congratulations! Award saved to your badge.';
+                resultMsg.textContent = 'Congratulations! Award saved to your badge. Go back to your badge to see it.';
                 tryAgainBtn.style.display = 'none';
             }
         } else {
